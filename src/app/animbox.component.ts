@@ -3,7 +3,10 @@ import { trigger, state, style, animate, transition, keyframes, group } from '@a
 
 @Component({
   selector: 'animbox',
-  template: `<div [@changeState]="currentState" class="mybox mx-auto"></div>`,
+  template: `
+    <div [@changeState]="currentState" (@changeState.start)="animationBegin($event)" (@changeState.done)="animationEnd($event)" class="mybox mx-auto"></div>
+    <div class="msbox mx-auto">{{msg}}</div>
+  `,
   styles: [`
     .mybox {
       background-color: #47748f;
@@ -11,6 +14,12 @@ import { trigger, state, style, animate, transition, keyframes, group } from '@a
       height: 200px;
       border-radius: 6px;
       margin: 6rem;
+    }
+    .msgbox {
+      margin: 2rem;
+      padding-top:2rem;
+      font-size: 1.8rem;
+      text-align: center;
     }
   `],
   animations: [
@@ -67,5 +76,14 @@ import { trigger, state, style, animate, transition, keyframes, group } from '@a
 
 export class AnimboxComponent {
   @Input() currentState: string | undefined;
+
+  msg = "rest";
+    animationBegin(e: {phaseName: string, fromState: string, toState: string, totalTime: number}) {
+        this.msg = e.phaseName + ": " + e.fromState + " => " + e.toState + " [" + e.totalTime + "]";
+    }
+    animationEnd(e: {phaseName: string, fromState: string, toState: string, totalTime: number}) {
+      this.msg = e.phaseName + ": " + e.fromState + " => " + e.toState + " [" + e.totalTime + "]";
+      setTimeout(() => { this.msg = "" }, 3000);
+    }
 
 }
