@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { AnimboxComponent } from './animbox.component';
 import { HomeComponent } from './routes/home.component';
 import { BasicComponent } from './routes/basic.component';
 import { AdvancedComponent } from './routes/advanced.component';
@@ -42,6 +43,7 @@ const animationRoutes:Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    AnimboxComponent,
     HomeComponent,
     BasicComponent,
     AdvancedComponent,
