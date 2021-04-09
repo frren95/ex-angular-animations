@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { trigger, state, style, animate, transition, keyframes, group } from '@angular/animations';
 
 @Component({
   selector: 'animbox',
@@ -35,6 +35,10 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
         backgroundColor: '#549a76',
         transform: 'scale(1)'
       })),
+      state('parallel', style({
+        backgroundColor: '#065e65',
+        transform: 'scale(0.4)'
+      })),
       transition('* => basic', animate('800ms')),
       transition('* => original', animate('200ms')),
       transition('* => delaying', animate('800ms 1200ms ease-out')),
@@ -46,7 +50,17 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
           style({backgroundColor: '#1b1b1b', transform: 'scale(1.2)', offset: 0.7}),
           style({backgroundColor: '#549a76', transform: 'scale(1)', offset: 0.9})
         ]))
-      ])
+      ]),
+      transition('* => parallel', [
+        group([
+          animate('1000ms ease-out', style({
+            backgroundColor: '#065e65'
+          })),
+          animate('2000ms ease-out', style({
+            transform: 'scale(1.4)'
+          }))
+        ])
+      ]),
     ])
   ]
 })
