@@ -18,24 +18,49 @@ import { from } from 'rxjs';
 const animationRoutes:Routes = [
   {
     path: 'animation-home',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {
+      animation: {
+        value: 'home',
+      }
+    }
   },
   {
     path: 'animation-basics',
-    component: BasicComponent
+    component: BasicComponent,
+    data: {
+      animation: {
+        value: 'basics',
+      }
+    }
   },
   {
     path: 'animation-contained',
-    component: ContainedComponent
+    component: ContainedComponent,
+    data: {
+      animation: {
+        value: 'contained',
+      }
+    }
   },
   {
     path: 'animation-advanced',
-    component: AdvancedComponent
+    component: AdvancedComponent,
+    data: {
+      animation: {
+        value: 'advanced',
+      }
+    }
   },
   {
     path: '',
     redirectTo: '/animation-home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      animation: {
+        value: 'home',
+      }
+    }
   },
   {
     path: '**',
