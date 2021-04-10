@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { trigger, transition } from '@angular/animations';
-import { slideAnimation } from './animations';
+import { slideAnimation, dissolveAnimation } from './animations';
 
 @Component({
   selector: 'app-root',
@@ -36,6 +36,7 @@ import { slideAnimation } from './animations';
   encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('routerAnimations', [
+      transition('* => home', dissolveAnimation),
       transition('* => *', slideAnimation)
     ])
   ]
