@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AnimboxComponent } from './animbox.component';
 import { MouseComponent } from './mouse.component';
+import { FadeBlockComponent } from './fadeblock.component';
+
 import { HomeComponent } from './routes/home.component';
 import { BasicComponent } from './routes/basic.component';
 import { AdvancedComponent } from './routes/advanced.component';
@@ -47,6 +49,7 @@ const animationRoutes:Routes = [
     AppComponent,
     AnimboxComponent,
     MouseComponent,
+    FadeBlockComponent,
     HomeComponent,
     BasicComponent,
     AdvancedComponent,

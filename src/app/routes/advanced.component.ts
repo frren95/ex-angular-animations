@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-12">
-                <div></div>
+                <fadeblock></fadeblock>
             </div>
         </div>
     </div>
