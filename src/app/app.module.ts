@@ -5,11 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AnimboxComponent } from './animbox.component';
+import { MouseComponent } from './mouse.component';
 import { HomeComponent } from './routes/home.component';
 import { BasicComponent } from './routes/basic.component';
 import { AdvancedComponent } from './routes/advanced.component';
 import { ContainedComponent } from './routes/contained.component';
 import { PageNotFoundComponent } from './pageNotFound.component';
+import { from } from 'rxjs';
 
 const animationRoutes:Routes = [
   {
@@ -44,6 +46,7 @@ const animationRoutes:Routes = [
   declarations: [
     AppComponent,
     AnimboxComponent,
+    MouseComponent,
     HomeComponent,
     BasicComponent,
     AdvancedComponent,
